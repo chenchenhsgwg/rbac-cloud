@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: admin
+  cloud:
+    nacos:
+      config:
+        # 配置为yaml时，必须添加此项配置
+        file-extension: yaml
+        server-addr: ${NACOS_SERVER_ADDR:localhost}:${NACOS_SERVER_PORT:8848}
+      discovery:
+        server-addr: ${NACOS_SERVER_ADDR:localhost}:${NACOS_SERVER_PORT:8848}
+        auto-register: true
+        service: admin
